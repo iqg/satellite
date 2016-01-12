@@ -1,0 +1,58 @@
+# Cache and logs
+/app/cache/*
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+
+# Parameters
+/app/config/parameters.yml
+/app/config/parameters.ini
+
+# Managed by Composer
+/app/bootstrap.php.cache
+/bin/
+/vendor/
+
+# Assets and user uploads
+/web/bundles/
+/web/uploads/
+
+# PHPUnit
+/app/phpunit.xml
+
+# Composer PHAR
+/composer.phar
+/composer.lock
+
+.DS_Store
+/.idea
+
+# Larry Files
+/.tags
+/.tags_sorted_by_file
+/resetData.sh
+
+*.php~
+*.swap
+*.swp
+*.swo
+*.bak
+
+Gemfile.lock
+
+# Ctags Phpcomplete Files
+/tags
+/.phpcomplete_extended/
+
+# ignore doctrine cli-config.php file
+/cli-config.php
+
+# ignore some test files
+TestCommand.php
+
+# Kdevelop IDE
+.kdev4
+*.kdev4
+
+# tmplog
+/tmplog

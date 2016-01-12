@@ -1,3 +1,4 @@
 satellite:
-    resource: "@SatelliteBundle/Resources/config/routing.yml"
+    resource: "@DWDSatelliteBundle/Resources/config/routing.yml"
     prefix:   /
+
