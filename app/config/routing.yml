@@ -1,0 +1,3 @@
+satellite:
+    resource: "@SatelliteBundle/Resources/config/routing.yml"
+    prefix:   /

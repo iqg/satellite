@@ -1,0 +1,3 @@
+satellite_homepage:
+    path:     /
+    defaults: { _controller: SatelliteBundle:Default:index }
