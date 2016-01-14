@@ -1,3 +1,9 @@
 satellite:
-    resource: "@SatelliteBundle/Resources/config/routing.yml"
+    resource: "@DWDSatelliteBundle/Controller/"
+    type:     annotation
     prefix:   /
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /44bb8b1f8dfb2dc5269118b212a9dbc6/api/doc
+
