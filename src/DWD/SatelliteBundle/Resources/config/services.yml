@@ -1,4 +1,16 @@
 services:
-#    satellite.example:
-#        class: SatelliteBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+    cache.handler:
+        class: DWD\SatelliteBundle\Util\Cache\CacheHandler
+        arguments: [@service_container]
+
+    dwd.data.http:
+        class: DWD\SatelliteBundle\Util\InternalApi\DWDDataHttp
+        arguments: [@service_container]
+
+    internalapi.handler:
+        class: DWD\SatelliteBundle\Util\InternalApi\InternalApiHandler
+        arguments: [@service_container]
+
+    systemconfig.handler:
+        class: DWD\SatelliteBundle\Util\SystemConfig\SystemConfigHandler
+        arguments: [@service_container]
