@@ -2,6 +2,14 @@
 
 use Symfony\Component\HttpFoundation\Request;
 
+function getmicrotime()
+{
+    list($usec, $sec) = explode(" ",microtime());
+    return ((float)$usec + (float)$sec);
+}
+
+$timeStart = getmicrotime();
+
 /**
  * @var Composer\Autoload\ClassLoader
  */
@@ -27,4 +35,9 @@ $kernel->loadClassCache();
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
+
+$timeEnd   = getmicrotime();
+$kernel->getContainer()->get('DWD_Logger')->addNotice('cost', ($timeEnd - $timeStart) * 1000);
+$kernel->getContainer()->get('DWD_Logger')->notice();
+
 $kernel->terminate($request, $response);

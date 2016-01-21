@@ -105,4 +105,23 @@ class DWDDataHttp
 
         return $responses;
     }
+
+    static function request($request) {
+        $ch                = curl_init();
+        switch ( $request['method'] ) {
+            case 'get':
+                self::PackageGetRequest( $ch, $request );
+                break;
+            case 'post':
+                self::PackagePostRequest( $ch, $request );
+                break;
+            default: break;
+        }
+        self::PackageGetRequest( $ch, $request );
+
+        $responses = curl_exec($ch);
+        curl_close($ch);
+
+        return $responses;
+    }
 }

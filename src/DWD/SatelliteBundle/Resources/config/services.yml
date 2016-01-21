@@ -1,4 +1,12 @@
 services:
+    Logger_Formater:
+        class: Monolog\Formatter\LineFormatter
+        arguments:
+            - "[%%datetime%%] [%%level_name%%]: [%%message%%]\n"
+    DWD_Logger:
+        class: DWD\SatelliteBundle\Util\Log\DwdLogger
+        arguments: [@service_container]
+
     cache.handler:
         class: DWD\SatelliteBundle\Util\Cache\CacheHandler
         arguments: [@service_container]
@@ -13,4 +21,12 @@ services:
 
     systemconfig.handler:
         class: DWD\SatelliteBundle\Util\SystemConfig\SystemConfigHandler
+        arguments: [@service_container]
+
+    sign.handler:
+        class: DWD\SatelliteBundle\Util\Wifi\Sign
+        arguments: [@service_container]
+
+    wifikey.handler:
+        class: DWD\SatelliteBundle\Util\Wifi\WifiKeyHandler
         arguments: [@service_container]

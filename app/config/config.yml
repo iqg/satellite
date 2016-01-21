@@ -67,3 +67,18 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+monolog:
+    channels: ["access", "callRecord"]
+    handlers:
+        access:
+            type: rotating_file
+            path: "%kernel.logs_dir%/access.log"
+            level: INFO
+            formatter: Logger_Formater
+            channels: [access]
+        callRecord:
+            type: rotating_file
+            path: "%kernel.logs_dir%/callRecord.log"
+            level: INFO
+            formatter: Logger_Formater
+            channels: [callRecord]
