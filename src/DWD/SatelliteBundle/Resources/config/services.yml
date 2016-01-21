@@ -3,6 +3,13 @@ services:
         class: Monolog\Formatter\LineFormatter
         arguments:
             - "[%%datetime%%] [%%level_name%%]: [%%message%%]\n"
+
+    dwd.request_listener:
+        class: DWD\SatelliteBundle\EventListener\RequestListener
+        tags:
+            - {name:kernel.event_listener, event: kernel.request, method: logRequest}
+        arguments: [@service_container]
+
     DWD_Logger:
         class: DWD\SatelliteBundle\Util\Log\DwdLogger
         arguments: [@service_container]

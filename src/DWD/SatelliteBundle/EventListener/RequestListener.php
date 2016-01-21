@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace DWD\ApiBundle\EventListener;
+namespace DWD\SatelliteBundle\EventListener;
  
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
