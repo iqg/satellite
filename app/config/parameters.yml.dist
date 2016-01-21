@@ -19,3 +19,7 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
     redis_dsn:         ~
     internal_api_host: ~
+    wifi_key:
+        token: ~
+        appid: ~
+        secret: ~
