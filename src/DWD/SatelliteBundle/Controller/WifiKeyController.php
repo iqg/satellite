@@ -88,7 +88,7 @@ class WifiKeyController extends Controller {
                 'title'         =>  $dataItem['name'],
                 'desc'          =>  $dataItem['description'],
                 'img'           =>  $dataItem['images'][0],
-                'url'           =>  'http://' . $h5Host . '/item/' . $dataItem['id'] . '?type=bargain',
+                'url'           =>  'http://' . $h5Host,  # . '/item/' . $dataItem['id'] . '?type=bargain',
                 'description'   =>  $dataItem['description'],
                 'city'          =>  '',
                 'original_price'=>  $dataItem['start_price'] * 100,
